@@ -147,7 +147,7 @@ N = 10000 # Количество элементов правил
 M = 1000 # Количество фактов
 rules = generate_simple_rules(100, 4, N) # правила
 facts = generate_rand_facts(100, M) # факты
-print("%d rules generated in %f seconds" % (N, time() - time_start))
+print("%d rules generated in %f seconds" % (N, time() - time_start)) # Время генерации ЭН фактов
 
 
 #load and validate rules
