@@ -141,33 +141,26 @@ def check_facts(rules, facts):
     return result
 
 
-#samples:
-print(generate_simple_rules(100, 4, 10))
-print(generate_random_rules(100, 4, 10))
-print(generate_stairway_rules(100, 4, 10, ["or"]))
-print(generate_ring_rules(100, 4, 10, ["or"]))
-
-
 #generate rules and facts and check time
 time_start = time()
-N = 100000
-M = 1000
-rules = generate_simple_rules(100, 4, N)
-facts = generate_rand_facts(100, M)
+N = 10000 # Количество элементов правил
+M = 1000 # Количество фактов
+rules = generate_simple_rules(100, 4, N) # правила
+facts = generate_rand_facts(100, M) # факты
 print("%d rules generated in %f seconds" % (N, time() - time_start))
 
 
 #load and validate rules
 # YOUR CODE HERE
-rules = check_validate_rules(rules)
-print(f"{N} rules validated {round(time() - time_start, 6)} seconds")
+rules = check_validate_rules(rules) # Проверка правила на порректность
+print(f"{N} rules validated {round(time() - time_start, 6)} seconds") # вывод времени проверки правил
 
 
 #check facts vs rules
-time_start = time()
+time_start = time() 
 
 # YOUR CODE HERE
-check_facts(rules, facts)
+check_facts(rules, facts) # проверка фактов
 
 
-print("%d facts validated vs %d rules in %f seconds" % (M, N, time()-time_start))
+print("%d facts validated vs %d rules in %f seconds" % (M, N, time()-time_start)) # вывод времени проверки (достаточно долго)
